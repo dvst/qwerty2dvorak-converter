@@ -13,8 +13,10 @@
 	       a s d f g h j k l ñ { } 
 	       z x c v b n m , . - );
 
-@tokens = qw( . e - { . v );
+@tokens = qw( . e v - { z );
 
-foreach (@dvorak){
-	print $_ . "\n";
-}
+$palabra = $ARGV[0] ;
+
+#foreach (@dvorak){
+#	print $_ . " " .  $palabra . "\n";
+#}
