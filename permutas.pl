@@ -26,7 +26,13 @@ sub translate_keyboard{
     $convertion = $convert_to_keyboard eq 'q' ? dvorak2querty : querty2dvorak ; 
 
     for($j=0 ; $j < @letters ; $j++){
-        $translated_word .= $$convertion{$letters[$j]} ;
+        $upper = $letters[$j] =~ /[A-Z]/ ;
+        if ($upper) {
+            $letters[$j] = lc($letters[$j]);
+            $translated_word .= uc($$convertion{$letters[$j]}) ;
+        }else{
+            $translated_word .= $$convertion{$letters[$j]} ;
+        }
     }
 
     print $translated_word . "\n" ;
