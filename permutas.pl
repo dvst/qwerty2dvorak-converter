@@ -30,12 +30,15 @@ sub translate_keyboard{
         if ($upper) {
             $letters[$j] = lc($letters[$j]);
             $translated_word .= uc($$convertion{$letters[$j]}) ;
+            $translated_word_inverted .= $$convertion{$letters[$j]} ;
         }else{
             $translated_word .= $$convertion{$letters[$j]} ;
+            $translated_word_inverted .= uc($$convertion{$letters[$j]}) ;
         }
     }
 
     print $translated_word . "\n" ;
+    print $translated_word_inverted . "\n" ;
 }
 
 &translate_keyboard($ARGV[0],$ARGV[1]) ;
